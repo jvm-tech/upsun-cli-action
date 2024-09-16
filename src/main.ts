@@ -1,5 +1,5 @@
-import * as core from "@actions/core";
-import * as exec from "@actions/exec";
+import * as core from '@actions/core'
+import * as exec from '@actions/exec'
 
 /**
  * The main function for the action.
@@ -7,10 +7,12 @@ import * as exec from "@actions/exec";
  */
 export async function run(): Promise<void> {
   try {
-    const token = core.getInput("token");
+    const token = core.getInput('token')
 
-    await exec.exec(` bash -c "curl https://raw.githubusercontent.com/platformsh/cli/main/installer.sh | VENDOR=upsun INSTALL_METHOD=raw sudo bash"`);
-    core.exportVariable("UPSUN_CLI_TOKEN", token);
+    await exec.exec(
+      ` bash -c "curl https://raw.githubusercontent.com/platformsh/cli/main/installer.sh | VENDOR=upsun INSTALL_METHOD=raw sudo bash"`
+    )
+    core.exportVariable('UPSUN_CLI_TOKEN', token)
   } catch (error) {
     // Fail the workflow run if an error occurs
     if (error instanceof Error) core.setFailed(error.message)
