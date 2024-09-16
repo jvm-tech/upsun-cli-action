@@ -1,0 +1,22 @@
+name: "Upsun cli action"
+description: "Use the upsun cli in your project"
+author: "Michel Löw <michel.loew@jvm.ch> (https://www.jvmtech.ch)"
+
+# Add your action's branding here. This will appear on the GitHub Marketplace.
+branding:
+  icon: "heart"
+  color: "red"
+
+# Define your inputs here.
+inputs:
+  token:
+    description: "Your upsun api token"
+    required: true
+    default: ""
+  version:
+    description: "The version of the cli to install"
+    default: "main"
+
+runs:
+  using: node20
+  main: dist/index.js
