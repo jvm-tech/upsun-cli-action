@@ -10,7 +10,7 @@ export async function run(): Promise<void> {
     const token = core.getInput('token')
 
     await exec.exec(
-      ` bash -c "curl https://raw.githubusercontent.com/platformsh/cli/main/installer.sh | VENDOR=upsun INSTALL_METHOD=raw sudo bash"`
+      ` bash -c "curl https://raw.githubusercontent.com/platformsh/cli/main/installer.sh | sudo VENDOR=upsun INSTALL_METHOD=raw bash"`
     )
     core.exportVariable('UPSUN_CLI_TOKEN', token)
   } catch (error) {
