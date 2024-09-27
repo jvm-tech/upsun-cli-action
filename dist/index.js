@@ -26190,7 +26190,7 @@ const exec = __importStar(__nccwpck_require__(1514));
 async function run() {
     try {
         const token = core.getInput('token');
-        await exec.exec(` bash -c "curl https://raw.githubusercontent.com/platformsh/cli/main/installer.sh | VENDOR=upsun INSTALL_METHOD=raw sudo bash"`);
+        await exec.exec(` bash -c "curl https://raw.githubusercontent.com/platformsh/cli/main/installer.sh | sudo VENDOR=upsun INSTALL_METHOD=raw bash"`);
         core.exportVariable('UPSUN_CLI_TOKEN', token);
     }
     catch (error) {
