@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Michel Löw <michel.loew@jvm.ch> (https://www.jvmtech.ch)",
   "private": true,
+  "type": "module",
   "homepage": "https://github.com/jvm-tech/upsun-cli-action",
   "repository": {
     "type": "git",
@@ -36,8 +37,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.11.1",
-    "@actions/exec": "^1.1.1"
+    "@actions/core": "^3.0.1",
+    "@actions/exec": "^3.0.0"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
